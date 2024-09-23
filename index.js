@@ -53,7 +53,24 @@ app.post("/sendemail", async (req, res) => {
             to: email,
             subject: "Verify Your Email",
       
-            html: `<b>Kindly Use this " ${otp} " OTP to Secure Your Account</b>`,
+            html: `
+            <div style="font-family: Arial, sans-serif; color: #333; padding: 20px; text-align: center;">
+                <div style="background-color: #f7f7f7; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+                    <img src="https://www.bhartiaxa.com/sites/default/files/2023-02/bmi-scale.svg" alt="Logo" style="width: 100px; margin-bottom: 20px;" />
+                    <h2 style="color: #4CAF50;">Verify Your Email</h2>
+                    <p style="font-size: 16px; line-height: 1.5;">
+                        Welcome! Please use the OTP below to verify your email and secure your account.
+                    </p>
+                    <div style="background-color: #f0f8ff; padding: 15px; border-radius: 5px; font-size: 24px; font-weight: bold; letter-spacing: 2px; color: #4CAF50;">
+                        ${otp}
+                    </div>
+                    <p style="font-size: 14px; margin-top: 20px;">
+                        If you did not request this, please ignore this email.
+                    </p>
+                    <a href="https://bmi-calculator-lac-mu.vercel.app/" style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; margin-top: 20px;">Visit our Website</a>
+                </div>
+            </div>
+            `
         });
 
         console.log("Message sent: %s", info.messageId);
