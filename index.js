@@ -11,22 +11,31 @@ app.use(cors());
 app.use(bodyParser.json());
 
 let otpverification;
+
 app.post("/verifyotp",async(req,res)=>{
+    
     otpverification=req.body;
+ console.log("getting otp",otpverification)
 
-
-   if(otp==otpverification.otpss){
+   if(hexOtp==otpverification.hexOtp){
     return res.status(200).json({status:'true'})
 }else if(otp!=otpverification){
     return res.status(404).json({status:'false'})
 }
 })
 let otp="";
+
+let  hexOtp = '';  
 app.post("/sendemail", async (req, res) => {
 
     const { email } = req.body;
     otp= otpGenerator.generate(6, { upperCaseAlphabets: false, specialChars: false });
-   
+    hexOtp = '';    
+    for (let i = 0; i < otp.length; i++) {
+        hexOtp += otp.charCodeAt(i).toString(16);
+    }
+
+  
 
     if (!email) {
         return res.status(400).send("Email is required");
@@ -48,7 +57,7 @@ app.post("/sendemail", async (req, res) => {
         });
 
         console.log("Message sent: %s", info.messageId);
-        res.status(200).json({ message: "Email sent successfully",OTP:otp });
+        res.status(200).json({ message: "Email sent successfully",OTP:hexOtp });
        
     } catch (error) {
         console.error("Error sending email:", error);
