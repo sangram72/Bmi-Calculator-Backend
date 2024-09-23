@@ -56,7 +56,7 @@ app.post("/sendemail", async (req, res) => {
             html: `
             <div style="font-family: Arial, sans-serif; color: #333; padding: 20px; text-align: center;">
                 <div style="background-color: #f7f7f7; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
-                    <img src="https://www.bhartiaxa.com/sites/default/files/2023-02/bmi-scale.svg" alt="Logo" style="width: 100px; margin-bottom: 20px;" />
+                   
                     <h2 style="color: #4CAF50;">Verify Your Email</h2>
                     <p style="font-size: 16px; line-height: 1.5;">
                         Welcome! Please use the OTP below to verify your email and secure your account.
