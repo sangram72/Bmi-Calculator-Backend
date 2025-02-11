@@ -67,7 +67,7 @@ app.post("/sendemail", async (req, res) => {
                     <p style="font-size: 14px; margin-top: 20px;">
                         If you did not request this, please ignore this email.
                     </p>
-                    <a href="https://bmi-calcu.vercel.app/" style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; margin-top: 20px;">Visit our Websites</a>
+                    <a href="https://portfolio-ruby-ten-77.vercel.app/" style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; margin-top: 20px;">Visit our Websites</a>
                 </div>
             </div>
             `
