@@ -59,7 +59,7 @@ app.post("/sendemail", async (req, res) => {
                    
                     <h2 style="color: #4CAF50;">Verify Your Email</h2>
                     <p style="font-size: 16px; line-height: 1.5;">
-                        Welcome! Please use the OTP below to verify your email and secure your account.
+                        Welcome to Sangram's Projects! Please use the OTP below to verify your email and secure your account.
                     </p>
                     <div style="background-color: #f0f8ff; padding: 15px; border-radius: 5px; font-size: 24px; font-weight: bold; letter-spacing: 2px; color: #4CAF50;">
                         ${otp}
